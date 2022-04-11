@@ -42,7 +42,8 @@ def ping_address(ip_address):
         ping_cmd = f"ping -c 1 -W 2 {ip_address} > /dev/null 2>&1"
     # run command and capture exit code
     exit_code = os.system(ping_cmd)
-
+    return exit_code
+    #print(exit_code)
 
 
 #read IPs from file
@@ -51,7 +52,7 @@ ip_addresses = import_addresses()
 for ip in ip_addresses:
     # Call function
     exit_code = ping_address(ip)
-
+    print(exit_code)
     if exit_code == 0:
         write_log("{0} is online".format(ip))
         print("{0} is online".format(ip))
