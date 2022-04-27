@@ -11,7 +11,7 @@ url = "https://api.github.com/user/repos"
 
 payload={}
 headers = {
-  'Authorization': 'token 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'
+  'Authorization': 'token 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'
 }
 
 # response = requests.request("GET", url, headers=headers, data=payload)
