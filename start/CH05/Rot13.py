@@ -3,7 +3,7 @@
 # By Alberto German Verissimo on April 11, 2022
 
 # Promp for the source message
-source_message = input("What us the message to encryot/decrypt? ")
+source_message = input("What is the message to encrypt/decrypt? ")
 # Convert message to lower-case for simplicity
 source_message = source_message.lower()
 final_message = ""
