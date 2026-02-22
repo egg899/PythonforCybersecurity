@@ -9,7 +9,7 @@ def encode_data(plain_text):
     #Convert plain_text string to bytes
     plain_text = plain_text.encode()
     #Encode the plain_text
-    cipher_text =base64.b64encode(plain_text)
+    cipher_text = base64.b64encode(plain_text)
     #Convert the encoded bytes back to string
     cipher_text = cipher_text.decode()
     return cipher_text
