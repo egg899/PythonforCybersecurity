@@ -23,9 +23,9 @@ def read_dictionary(dictionary_file):
     return message 
 
 #Load dictionary file and prompt for has and algorithms/salt    
-password_dictionary = read_dictionary("top1000.txt")
-hashed_password = input("What is the hashed password?")
-algorithm_salt = input("What is the algorithm and salt?")
+password_dictionary = read_dictionary("top10.txt")
+hashed_password = input("What is the hashed password? ")
+algorithm_salt = input("What is the algorithm and salt? ")
 
 #For each password in dictionary file, test against hashed_password
 for password in password_dictionary.splitlines():
