@@ -16,14 +16,18 @@ def test_password(hashed_password, algorithm_salt, plaintext_password):
     return False    
 
 
-hashed_password = "$6$G.DTW7g9s5U7KYf5$QFcHx0/J88HV/Q0ab653gfYQ1KyNGx5HRhDQYyai2ZUy7Aw4tyfJ6/kI6kllfXl0DyS.LuaUJvqnlIn2fVM5F0"
-algorithm_salt = "$6$G.DTW7g9s5U7KYf5$"
+#hashed_password = "$6$G.DTW7g9s5U7KYf5$QFcHx0/J88HV/Q0ab653gfYQ1KyNGx5HRhDQYyai2ZUy7Aw4tyfJ6/kI6kllfXl0DyS.LuaUJvqnlIn2fVM5F0"
+#algorithm_salt = "$6$G.DTW7g9s5U7KYf5$"
+hashed_password = "$y$j9T$ryDe07Zxm2YLxpIyWcNb1/$Se.vK0DuyTRjRTtj1ZSyNk2o/rtKmFxYYfeCbejZURC"
+algorithm_salt = "$y$j9T$ryDe07Zxm2YLxpIyWcNb1/$"
 
 for password in range(100000):
+    
     result = test_password(hashed_password, algorithm_salt, str(password))
+    
     if result:
         print("Match found: {0}".format(password))
         break
-    else:
-        print('nope')
-        break
+else:
+    print('nope')
+        

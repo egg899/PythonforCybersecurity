@@ -4,7 +4,7 @@ import os
 
 def extract_prefix(full_hash):
     """
-    Extractind $id$salt from Linux cryt hash
+    Extractind $id$salt from Linux crypt hash
     """
 
     parts = full_hash.split('$')
@@ -39,6 +39,7 @@ def crack_password():
     except ValueError as e:
         print("Error:", e)
         return
+    
     try:
         with open(wordlist_file, "r", encoding="utf", errors="ignore") as file:
         
