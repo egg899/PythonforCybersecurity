@@ -1,9 +1,9 @@
-question = input("Is today a good day? (n/y)") 
+# question = input("Is today a good day? (n/y)") 
 
-for i in range(10):
+# for i in range(10):
   
-    if question == "y":
-        print("Yes, it is")
+#     if question == "y":
+#         print("Yes, it is")
 
 
 
@@ -11,3 +11,9 @@ for i in range(10):
 # if question == "y":
 #     for i in range(10):
 #         print("Yes it is!")       
+
+while True:
+    question = input("Is today a good day? (y/n)")
+    if question == "y":
+        print("Yes, it is")
+        break

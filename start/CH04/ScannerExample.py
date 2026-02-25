@@ -8,10 +8,11 @@
 import nmap
 
 #Idwntify target address
-target_address = "192.168.0.2"
+# target_address = "192.168.0.2"
+target_address = "186.39.36.147"
 
 #Identify start and stop port for the scan
-port_start = 75
+port_start = 22
 port_end = 100
 
 #Create the scanner object

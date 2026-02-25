@@ -6,11 +6,25 @@
 import requests
 import json
 
+# def get_people_in_space():
+#     request_uri = "http://api.open-notify.org/astros.json"
+#     r = requests.get(request_uri)
+#     items = r.json()
+#     return items
+
+## Example of the function with a BEARER
 def get_people_in_space():
     request_uri = "http://api.open-notify.org/astros.json"
-    r = requests.get(request_uri)
+
+    headers = {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4N2RkZTlkOTc4MTljMzBmOTFhMTJkYiIsImlhdCI6MTc2NjA5NTA4NywiZXhwIjoxNzY2Njk5ODg3fQ.Xy1XrN_gcR3HUDxTSjr1O9e2l50jos8QRCB-cAroVDc",
+        "Content-Type":"application/json"
+    }
+
+    r = requests.get(request_uri, headers=headers)
     items = r.json()
-    return items
+    return items 
+
 
 astronauts = get_people_in_space()
 

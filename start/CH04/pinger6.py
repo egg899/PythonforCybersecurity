@@ -14,6 +14,7 @@ def import_addresses():
     # Open file and read line-by-line
     script_path = os.path.realpath(__file__)
     script_folder = os.path.split(script_path)
+    
     f = open(script_folder[0] + "/ips.txt", "r")
     for line in f:
         # Use strip() to remove spaces and carriage returns
@@ -22,12 +23,13 @@ def import_addresses():
         lines.append(line)
     # Return the list object to the main body
     return lines
-
+#print('Imported: ',import_addresses())
 def write_log(message):
     now = str(datetime.now()) + "\t"
     message = now + str(message) + "\n"
     script_path = os.path.realpath(__file__)
     script_folder = os.path.split(script_path)
+   
     f = open(script_folder[0] + "/pinger.log", "a")
     f.write(message)
     f.close()

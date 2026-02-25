@@ -6,6 +6,7 @@
 # for student in students:
 #     print("Hello {0}".format(student))
 #     print("  How are you today?")
+import platform
 import os
 
 
@@ -29,3 +30,19 @@ import os
 #     i+=1
 
 #     print("Done")
+
+current_os = platform.system().lower()
+ip_funcional = []
+
+for i in range(245):
+    ip = f"186.39.36.{i+1}"
+    ping_cmd = f"ping -n 1 {ip} > nul 2>&1" if current_os == "windows" else f"ping -c 1 -W 2 {ip} > /dev/null 2>&1"
+    
+    exit_code = os.system(ping_cmd)
+
+    if exit_code == 0:
+        print(ip, "RESPONDE")
+        ip_funcional.append(ip)
+
+print("\nIPs funcionales encontradas:")
+print(ip_funcional)
