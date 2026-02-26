@@ -40,18 +40,22 @@
 
 import requests
 import configparser
+import os 
 
 def get_api_key(key_name):
   #Create configparser object and load file
   config = configparser.ConfigParser()
-  config.read("/Users/user/Desktop/Programming and data analysis/Udemy/Cybersecurity/secrets.ini")
+  #config.read("/Users/user/Desktop/Programming and data analysis/Udemy/Cybersecurity/secrets.ini")
+  file_path = os.path.join(os.path.dirname(__file__), "secret.ini")
+  config.read(file_path)
+  
   #Get the Api Key and return
   api_key = config["APIkeys"][key_name]
   return api_key
 
 #Get API key from file
 token = get_api_key('Github')
-
+print(token)
 url = "https://api.github.com/user/repos"
 
 payload={}
